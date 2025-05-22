@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", serif;
+}
+
+h2 {
+  font-weight: 100;
+  font-size: xx-large;
+}
+
+body {
+  font-size: 14px;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+header #particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+header .info-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  height: 100vh;
+}
+
+header .info-text h1 {
+  font-size: 5rem;
+  font-weight: 500;
+  font-family: 'Ubuntu';
+}
+
+header .info-text h3 {
+  font-size: 1.5rem;
+}
+
+header .info-text .scroll {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  color: #fff;
+  transform: translate(0, -50%);
+  transition: all 0.5s;
+}
+
+header .info-text .scroll:hover {
+  opacity: 0.7;
+}
+
+header .info-text .scroll::before {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  z-index: -1;
+  content: '';
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0;
+  }
+  15%, 45% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+  }
+}
+
+#about, #features {
+  background-color: #000;
+  padding: 40px;
+}
+
+#about .header, #features .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#about .header h1, #features .header h1 {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#about .header a, #features .header a {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 10px 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#about .header a:hover, #features .header a:hover {
+  border-color: #fff;
+  box-shadow: none;
+}
+
+#about .card, #features .card {
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  display: flex;
+  gap: 30px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#about .card:hover, #features .card:hover {
+  border-color: #fff;
+  box-shadow: none;
+}
+
+#about .card img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#about .card .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#about .card .info h1, #features .card .info h1 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-family: 'Ubuntu';
+}
+
+#about .card .info p, #features .card .info p {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+}
+
+#features .feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+#features .feature-cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 350px;
+}
+
+#features .feature-cards .card .info i {
+  color: #fff;
+  font-size: 8rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+#features .feature-cards .card .info h1 {
+  text-align: center;
+}
+
+#features .feature-cards .card .info p {
+  font-size: 1.1rem;
+}
+
+.scroll-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2b2f4b;
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  padding: 16px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.scroll-top:hover {
+  border-color: #fff;
+  box-shadow: none;
+}
+
+.polaroid-carousel {
+    position: relative;
+    width: 100vw;
+    margin: 0;
+    overflow: visible; /* deixar imagens “pularem” um pouco */
+    padding: 60px 0;
+    background-color: #000; /* preto, combinando com seu site */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-end;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .polaroid {
+    background-color: #111;
+    padding: 12px 12px 36px 12px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    width: 160px;
+    font-family: 'Raleway', serif;
+    color: #ccc;
+    cursor: pointer;
+    transition: 
+      transform 0.4s ease, 
+      box-shadow 0.4s ease, 
+      border-color 0.4s ease,
+      z-index 0.4s ease;
+    position: relative;
+    user-select: none;
+    flex-shrink: 0;
+    z-index: 1; /* base */
+  }
+  
+  .polaroid:hover {
+    border-color: #666;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+  }
+  
+  .polaroid img {
+    width: 100%;
+    height: 140px;  /* altura fixa, ajuste conforme precisar */
+    object-fit: cover; /* mantém a proporção e corta o excesso */
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 12px;
+  }
+  
+  .polaroid span {
+    display: block;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #eee;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+  
+  /* Destaque a imagem central */
+  .polaroid-carousel .polaroid.active {
+    transform: scale(1.3);
+    z-index: 5;
+    border-color: #fff;
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }  
+  
+  /* Botões */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #2b2f4b;
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  padding: 14px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2.8rem;
+  transition: all 0.3s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(68, 75, 110, 0.9);
+}
+
+.carousel-btn.prev {
+  left: 25px;
+}
+
+.carousel-btn.next {
+  right: 25px;
+}
+
+  
+  /* Responsividade */
+  @media screen and (max-width: 720px) {
+    .polaroid-carousel {
+      max-width: 100%;
+      padding: 40px 0;
+    }
+  
+    .carousel-track {
+      gap: 10px;
+    }
+  
+    .polaroid {
+      width: 120px;
+      padding: 10px 10px 28px 10px;
+      border-radius: 16px;
+    }
+  
+    .polaroid-carousel .polaroid:nth-child(3) {
+      transform: scale(1.15);
+    }
+  
+    .polaroid span {
+      font-size: 0.9rem;
+    }
+  
+    .carousel-btn {
+      font-size: 2rem;
+      padding: 10px 16px;
+    }
+  
+    .carousel-btn.prev {
+      left: 10px;
+    }
+  
+    .carousel-btn.next {
+      right: 10px;
+    }
+  }
+  
+
+/* === FOOTER (fora do @media) === */
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px;
+}
+
+/* Separador moderno */
+.footer-separador {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    margin: 40px 0 30px 0; /* espaço acima e abaixo */
+  }
+
+footer .cols {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+footer .cols > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+footer h3, footer h4 {
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+footer p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+footer a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #999;
+}
+
+footer form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+footer input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    max-width: 450px; /* <- Limita a largura máxima */
+  }
+  
+
+footer button {
+  padding: 10px;
+  background-color: #2b2f4b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+footer button:hover {
+  background-color: #444b6e;
+}
+
+/* === AJUSTES RESPONSIVOS === */
+@media screen and (max-width: 720px) {
+  header .info-text h1 {
+    font-size: 4rem;
+  }
+
+  header .info-text h3 {
+    font-size: 1.1rem;
+  }
+
+  #about .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #about .card img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .info-text {
+    text-align: center;
+  }
+
+  .logo-img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+  }
+  footer form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  footer input[type="email"],
+  footer button {
+    width: 100%;
+  }
+}

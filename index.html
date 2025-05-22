@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Enchanticat</title>
+</head>
+
+<body>
+
+    <header>
+        <div id="particles"></div>
+        <div class="info-text">
+            <img src="assets/semfundo.png" alt="Imagem do Enchanticat" class="logo-img">
+            <h2>EnchantiCat</h2>
+            <h3>Impressões em 3D: Onde Magia e Criatividade Tomam Forma</h3>
+            <a href="#about" class="scroll"><i class='bx bxs-down-arrow'></i></a>
+        </div>
+    </header>
+
+
+    <section id="about">
+        <div class="header">
+            <h1>Sobre a empresa</h1>
+            <a href="#">Contrate-me</a>
+        </div>
+
+        <div class="card">
+            <img src="assets/logo.png">
+            <div class="info">
+                <h1>Enchanticat: Dando Forma à Imaginação com Impressão 3D</h1>
+                <p>
+                    Na Enchanticat, transformamos suas ideias em realidade através da magia da impressão 3D. Com
+                    tecnologia de ponta e atenção aos mínimos detalhes, criamos objetos personalizados, funcionais ou
+                    decorativos, com precisão e qualidade. Seja para protótipos, peças técnicas, miniaturas, brindes ou
+                    projetos criativos, nossa missão é encantar em cada camada impressa. Conte com a Enchanticat para
+                    dar vida aos seus projetos com inovação, criatividade e acabamento profissional.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="polaroid-carousel">
+        <div class="carousel-track">
+            <div class="polaroid"><img src="assets/img1.jpg" alt="Legenda 1"><span>Legenda 1</span></div>
+            <div class="polaroid"><img src="assets/img2.jpg" alt="Legenda 2"><span>Legenda 2</span></div>
+            <div class="polaroid"><img src="assets/img3.jpg" alt="Legenda 3"><span>Legenda 3</span></div>
+            <div class="polaroid"><img src="assets/img4.jpg" alt="Legenda 4"><span>Legenda 4</span></div>
+            <div class="polaroid"><img src="assets/img5.jpg" alt="Legenda 5"><span>Legenda 5</span></div>
+            <div class="polaroid"><img src="assets/img6.jpg" alt="Legenda 5"><span>Legenda 5</span></div>
+            <div class="polaroid"><img src="assets/img7.jpg" alt="Legenda 5"><span>Legenda 5</span></div>
+            <div class="polaroid"><img src="assets/img8.jpg" alt="Legenda 5"><span>Legenda 5</span></div>
+            <div class="polaroid"><img src="assets/img9.jpg" alt="Legenda 5"><span>Legenda 5</span></div>
+            <div class="polaroid"><img src="assets/img10.jpg" alt="Legenda 5"><span>Legenda 5</span></div>
+        </div>
+        <button class="carousel-btn prev" onclick="rotateCarousel(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="rotateCarousel(1)">&#10095;</button>
+    </section>
+
+    <section id="features">
+        <div class="header">
+            <h1>Nossos Diferenciais</h1>
+            <a href="#">Ver mais</a>
+        </div>
+        <div class="feature-cards">
+            <div class="card">
+                <div class="info">
+                    <i class='bx bxs-cube'></i>
+                    <h1>Modelagem Personalizada</h1>
+                    <p>
+                        Criamos peças únicas e sob medida a partir de suas ideias ou referências. Transforme seus
+                        projetos em objetos reais com alta precisão e riqueza de detalhes.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <i class='bx bx-layer'></i>
+                    <h1>Impressão de Alta Qualidade</h1>
+                    <p>
+                        Utilizamos impressoras 3D modernas e materiais de alta performance para garantir acabamento
+                        profissional, resistência e fidelidade ao design original.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="info">
+                    <i class='bx bxs-star'></i>
+                    <h1>Atendimento Encantador</h1>
+                    <p>
+                        Na Enchanticat, oferecemos um atendimento próximo, atencioso e rápido. Do primeiro contato à
+                        entrega final, nossa missão é encantar você em cada etapa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Separador moderno -->
+        <div class="footer-separador"></div>
+        <div class="cols">
+            <div class="about-col">
+                <h3>EnchantiCat</h3>
+                <p>Sonhar é o combustível da alma</p>
+            </div>
+
+            <div class="links-col">
+                <h4>Mídias Sociais</h4>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">WhatsApp</a>
+            </div>
+
+            <div class="news-col">
+                <h4>Boletim Informativo</h4>
+                <p>
+                    Insira seu e-mail e receba notificações sobre novidades.</p>
+
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button><i class='bx bxl-telegram'></i></button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <button class="scroll-top" onclick="scrollToTop()">
+        <i class='bx bxs-up-arrow'></i>
+    </button>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
