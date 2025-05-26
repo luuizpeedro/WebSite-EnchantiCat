@@ -1,127 +1,109 @@
-particlesJS("particles", {
-    particles: {
-        number: {
-            value: 100,
-            density: {
-                enable: true,
-                value_area: 800
-            }
-        },
-        color: {
-            value: "#ffffff"
-        },
-        shape: {
-            type: "circle",
-            stroke: {
-                width: 0,
-                color: "#000000"
-            }
-        },
-        opacity: {
-            value: 0.8,
-            random: true,
-            animation: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0,
-                sync: false
-            }
-        },
-        size: {
-            value: 3,
-            random: true
-        },
-        line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 2,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-        }
-    },
-    interactivity: {
-        detectsOn: "canvas",
-        events: {
-            onHover: {
-                enable: true,
-                mode: "push"
-            },
-            onClick: {
-                enable: true,
-                mode: "push"
-            },
-            resize: true
-        },
-        modes: {
-            repulse: {
-                distance: 100,
-                duration: 0.4
-            },
-            push: {
-                particles_nb: 4
-            }
-        }
-    },
-    retina_detect: true
+// Scroll suave para links de navegação
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
+// Aparecer efeito de fade nas seções ao rolar a página
+function revealSections() {
+    document.querySelectorAll('section').forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            sec.classList.add('visible');
+        }
     });
 }
+window.addEventListener('scroll', revealSections);
+revealSections();
 
-window.addEventListener('scroll', function () {
-    var scrollTopButton = document.querySelector('.scroll-top');
-    if (this.window.pageYOffset > 200) {
-        scrollTopButton.style.display = 'block';
+// Botão voltar ao topo
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('show');
     } else {
-        scrollTopButton.style.display = 'none';
+        scrollTopBtn.classList.remove('show');
     }
 });
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
-function myFunction(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    var imgText = document.getElementById("imgtext");
-    expandImg.src = imgs.src;
-    imgText.innerHTML = imgs.alt;
-    expandImg.parentElement.style.display = "block";
+// Botão de seta no header para rolar para "Sobre"
+document.querySelector('header .btn-down').addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+
+    // Ajusta nav ativo
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    document.querySelector('nav a[href="#about"]').classList.add('active');
+});
+
+// PARTICLES CANVAS HEADER
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let width, height;
+let particlesArray = [];
+
+function initCanvas() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
 }
 
-const track = document.querySelector('.carousel-track');
-let interval = setInterval(() => rotateCarousel(1), 4000); // autoplay
-
-function rotateCarousel(direction) {
-    const slides = Array.from(track.children);
-
-    if (direction === 1) {
-        track.appendChild(slides[0]);
-    } else {
-        track.insertBefore(slides[slides.length - 1], slides[0]);
+class Particle {
+    constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.6;
+        this.speedY = (Math.random() - 0.5) * 0.6;
+        this.color = 'rgba(175, 143, 255, 0.7)';
     }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
 
-    updateActiveSlide();
-}
-
-// Destaque a imagem central
-function updateActiveSlide() {
-    const slides = Array.from(track.children);
-    const middleIndex = Math.floor(slides.length / 2);
-
-    slides.forEach(slide => slide.classList.remove('active'));
-    if (slides[middleIndex]) {
-        slides[middleIndex].classList.add('active');
+        if (this.x < 0 || this.x > width) this.speedX *= -1;
+        if (this.y < 0 || this.y > height) this.speedY *= -1;
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 8;
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
     }
 }
 
-// Executa no carregamento inicial
-updateActiveSlide();
+function createParticles() {
+    particlesArray = [];
+    const count = Math.floor(width / 15);
+    for (let i = 0; i < count; i++) {
+        particlesArray.push(new Particle());
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, width, height);
+    particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+window.addEventListener('resize', () => {
+    initCanvas();
+    createParticles();
+});
+
+initCanvas();
+createParticles();
+animate();
