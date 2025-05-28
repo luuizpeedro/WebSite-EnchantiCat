@@ -1,0 +1,15 @@
+{
+  "name": "website-enchanticat",
+  "version": "1.0.0",
+  "description": "Este repositório contém um **esboço inicial de uma landing page** voltada para o marketing de um site de **serviços de impressão 3D**.  \r O objetivo é apresentar, de forma visual e objetiva, os principais benefícios e diferenciais da empresa no setor de manufatura aditiva.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

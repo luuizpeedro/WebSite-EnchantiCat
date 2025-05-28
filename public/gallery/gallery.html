@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empresa Moderna</title>
+    <link rel="stylesheet" href="./gallery.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-title">Menu</div>
+      <nav>
+        <a href="#">🏠 Home</a>
+        <a href="#">🖼️ Galeria</a>
+        <a href="#">📄 Sobre</a>
+        <a href="#">📞 Contato</a>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+      <!-- Navbar -->
+      <header class="navbar">
+        <div class="logo-area">
+          <img src="/assets/logo.png" alt="logo" class="logo" />
+          <h1 class="brand-name">Galeria EnchantiCat</h1>
+        </div>
+      </header>
+
+      <div class="album">
+        <div class="responsive-container-block bg">
+          <div class="responsive-container-block img-cont" id="image-container">
+            <!-- Imagens inseridas aqui pelo JS -->
+            <img class="img" src="..." alt="..." />
+            <img class="img" src="..." alt="..." />
+            ...
+          </div>
+        </div>
+      </div>
+
+      <button id="load-more-btn">Ver mais</button>
+
+      <footer class="footer-direitos">
+        Desenvolvido por Whispering Code &copy; 2025 EnchantiCat - Impressão 3D
+        com Magia. Todos os direitos reservados.
+      </footer>
+    </div>
+
+    <script src="gallery.js"></script>
+    <!-- Seu JS para carregar as fotos -->
+  </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EnchantiCat - Impressão 3D com Magia</title>
+
+    <!-- Boxicons CDN para ícones -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-container">
+        <!-- Menu Toggle (Hamburger Icon) -->
+        <div class="menu-toggle" id="menuToggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <!-- Links do Menu -->
+        <div class="nav-links" id="navLinks">
+          <a href="#home" class="active">Início</a>
+          <a href="#about">Sobre</a>
+          <a href="#carousel-section">Portfólio</a>
+          <a href="#features">Diferenciais</a>
+          <a href="#contact">Contato</a>
+        </div>
+      </div>
+    </nav>
+
+    <header id="home">
+      <!-- Mantém a imagem no topo do header -->
+      <img src="./assets/semfundo.png" alt="Logo EnchantiCat" class="logo" />
+
+      <canvas id="particles-canvas"></canvas>
+
+      <h1>EnchantiCat</h1>
+      <h2>Impressão 3D onde Magia e Criatividade Tomam Forma</h2>
+      <a href="#about" class="btn-down" aria-label="Descer para Sobre"
+        ><i class="bx bxs-down-arrow"></i
+      ></a>
+    </header>
+
+    <section id="about">
+      <img src="./assets/logo.png" alt="Logo EnchantiCat" class="about-logo" />
+      <div>
+        <h2>Sobre a Empresa</h2>
+        <p>
+          Na EnchantiCat, transformamos suas ideias em realidade através da
+          magia da impressão 3D. Com tecnologia de ponta e atenção aos mínimos
+          detalhes, criamos objetos personalizados com precisão e qualidade.
+          Nossa missão é encantar em cada camada impressa.
+        </p>
+      </div>
+    </section>
+    <section id="carousel-section">
+      <h2>
+        Portfólio
+        <a href="./gallery/gallery.html" class="btn-link">
+          <button type="button" class="btn">
+            <strong>Galeria</strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+            <div id="glow">
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+          </button>
+        </a>
+      </h2>
+      <div class="carousel-container">
+        <div class="carousel">
+          <article>
+            <img src="./assets/polvo.jpg" alt="" />
+            <h2>Polvo</h2>
+            <div>
+              <p>
+                O polvinho bonitinho vai te animar. O brinquedo antiestresse que
+                é capaz de divertir crianças e adultos. O Conjunto inclui um
+                polvo com 3 animações: Alegre, Engraçado, Chocado.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <img src="./assets/tubarao.jpg" alt="easter eggs" />
+            <h2>Tubarão</h2>
+            <div>
+              <p>
+                O tubarão articulado vai te conquistar! Um brinquedo
+                antiestresse que diverte crianças e adultos. Com corpo flexível
+                e movimento realista, é perfeito para brincar, decorar ou
+                colecionar.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <img src="./assets/chaveiro.jpg" alt="hot cross buns" />
+            <h2>Chaveiro/Sup</h2>
+            <div>
+              <p>
+                Um chaveiro compacto e inteligente que vira um suporte de
+                celular em segundos! Ideal para assistir vídeos ou apoiar o
+                celular em qualquer lugar. Leve, prático e sempre à mão no seu
+                chaveiro.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <img src="./assets/lagarto.jpg" alt="easter chick" />
+            <h2>Lagarto</h2>
+            <div>
+              <p>
+                Divertido, flexível e cheio de estilo, ele é o brinquedo
+                antiestresse perfeito para todas as idades. Com corpo segmentado
+                e movimento realista, é ideal para brincar, decorar ou
+                colecionar!
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <img src="./assets/puppy.jpg" alt="easter bunny" />
+            <h2>Flex Puppy</h2>
+            <div>
+              <p>
+                Além de ser um cachorrinho articulado super fofo, ele também
+                funciona como suporte para celular. Ideal para decorar, brincar
+                ou apoiar seu celular com estilo.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <img src="./assets/tartaruga.jpg" alt="crown of thorms" />
+            <h2>Flex Turttle</h2>
+            <div>
+              <p>
+                Uma tartaruguinha articulada, cheia de personalidade, que também
+                serve como suporte para celular. Perfeita para decorar, brincar
+                ou apoiar o celular com um toque de fofura e criatividade!
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Diferenciais</h2>
+      <div class="features-grid">
+        <div class="card">
+          <div class="content">
+            <i class="bx bxs-cube"></i>
+            <h3>Modelagem Personalizada</h3>
+            <p>
+              Criamos peças únicas e sob medida a partir de suas ideias, com
+              alta precisão e detalhes.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content">
+            <i class="bx bx-layer"></i>
+            <h3>Impressão de Alta Qualidade</h3>
+            <p>
+              Impressoras modernas e materiais de alta performance garantem
+              acabamento profissional.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content">
+            <i class="bx bxs-star"></i>
+            <h3>Atendimento Encantador</h3>
+            <p>
+              Oferecemos um atendimento próximo, atencioso e rápido em todas as
+              etapas do processo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <!-- Mensagem da empresa -->
+      <div class="footer-left">
+        <h2>Enchanticat</h2>
+        <p>Transformando ideias em realidade com impressões 3D de qualidade.</p>
+      </div>
+
+      <!-- Redes sociais -->
+      <div class="footer-center">
+        <a href="#" class="social-link">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-facebook"></i> Facebook
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-newsletter">
+        <h3>Receba Novidades</h3>
+        <p>Assine e fique por dentro de nossos lançamentos e atualizações.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu e-mail" required />
+          <button type="submit">Inscrever</button>
+        </form>
+      </div>
+    </footer>
+
+    <footer class="footer-direitos">
+      Desenvolvido por Whispering Code &copy; 2025 EnchantiCat - Impressão 3D
+      com Magia. Todos os direitos reservados.
+    </footer>
+
+    <button id="scrollTopBtn" aria-label="Voltar ao topo">
+      <i class="bx bx-up-arrow-alt"></i>
+    </button>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
